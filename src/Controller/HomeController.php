@@ -1,11 +1,12 @@
 <?php
 namespace App\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
 
-class HomeController{
+class HomeController extends AbstractController{
     #[Route('/')]
     function index(){
-        die("Hello word");
+        return $this->render("home.html.twig");
     }
 }

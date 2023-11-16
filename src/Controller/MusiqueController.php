@@ -2,15 +2,20 @@
 namespace App\Controller;
 
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class MusiqueController{
+class MusiqueController extends AbstractController{
     #[Route('/musiques/{id?}/{slug?}')]
 
     public function musique($id, $slug){
-        if ($id && $slug) {
-            die("voici la muqique avec l'id $id et le slug $slug");
-        }else {
-            die("toutes les musiques");
-        }
+        $artistes = [
+            'artistes' => [
+                "safarel",
+                "Debordo",
+                "Gadji Celi"
+            ]
+        ];
+
+        return $this->render("/musique/musique.html.twig", $artistes);
     }
 }

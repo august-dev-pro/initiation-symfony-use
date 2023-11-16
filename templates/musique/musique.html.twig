@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+{% block tittle %}{{parent()}}/musiques{% endblock %}
+{% block body %}
+    <h1>
+        Nos Artistes
+    </h1>
+    <div>
+        Artistes:
+    </div>
+    <ul>
+        {% for artiste in artistes %}
+            <li>
+                {{ artiste | upper }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
